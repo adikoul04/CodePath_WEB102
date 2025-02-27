@@ -10,38 +10,39 @@ Time spent: **X** hours spent in total
 
 The following **required** functionality is completed:
 
-- [ ] **There is a unique theme for events or resources relevant to a specific community**
-- [ ] **At least 10 unique resources or events are displayed in a responsive card format**
+- [x] **There is a unique theme for events or resources relevant to a specific community**
+- [x] **At least 10 unique resources or events are displayed in a responsive card format**
 
 The following **optional** features are implemented:
 
-- [ ] Buttons or links to a related resources are on each card component
-- [ ] The site is responsive for both desktop and mobile formats
+- [x] Buttons or links to a related resources are on each card component
+- [x] The site is responsive for both desktop and mobile formats
 
 The following **additional** features are implemented:
 
-* [ ] List anything else that you added to improve the site's functionality!
+* [x] Custom water-inspired color palette with CSS variables for consistent theming
+* [x] Card hover effects with smooth animations (scaling images and card elevation)
+* [x] Category-specific styling with color coding for different resource types
+* [x] Staggered card entrance animations using CSS keyframes
+* [x] Custom card header accent bars that change color on hover
+* [x] Responsive grid layout that adjusts based on screen size
+* [x] Clean typography hierarchy with custom styling for headings
 
 ## Video Walkthrough
 
 Here's a walkthrough of implemented required features:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='/src/assets/recording.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
-<!-- Replace this with whatever GIF tool you used! -->
-GIF created with ...  
-<!-- Recommended tools:
-[Kap](https://getkap.co/) for macOS
-[ScreenToGif](https://www.screentogif.com/) for Windows
-[peek](https://github.com/phw/peek) for Linux. -->
+GIF created with LICEcap  
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+Most of the React was fairly straight forward. I spent the most time fiddling with the CSS, which is expected with any front-end application.
 
 ## License
 
-    Copyright [yyyy] [name of copyright owner]
+    Copyright 2025 Aditya Koul
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
