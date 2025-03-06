@@ -2,6 +2,8 @@
 
 This is where all of my code from the CodePath WEB102 course will go. 
 
+*Note: The README files of the labs are sparse but the project README files are more complete and descriptive*
+
 So far, the following projects have been added:
 | Name      | Assignment | Description |
 | ----------- | ----------- | ----------- |
