@@ -13,7 +13,6 @@ Time spent: **2** hours spent in total
 - [x] Users can view a list of cryptocurrencies with their current prices
 - [x] Real-time price data fetched from the CryptoCompare API
 - [x] Search functionality allows users to filter cryptocurrencies by name or symbol
-- [x] Responsive sidebar navigation for improved user experience
 - [x] Modern UI with dark theme optimized for crypto traders
 - [x] Filtering to display only blockchain-based cryptocurrencies
 - [x] Responsive design that works on both desktop and mobile devices
