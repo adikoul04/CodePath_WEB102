@@ -12,5 +12,6 @@ So far, the following projects have been added:
 | [Barista App](https://github.com/adikoul04/CodePath_WEB102/tree/main/barista-app) | Lab 3 | A barista training app that involves formsm controlled components, and different types of user input |
 | [Cap!](https://github.com/adikoul04/CodePath_WEB102/tree/main/cap) | Lab 5 | A social media platform for sharing and discovering photos. Uses HTTP calls to get images from real websites |
 | [Dog Veni Vici](https://github.com/adikoul04/CodePath_WEB102/tree/main/veni-vici) | Project 5 | A discovery app that shows the users new dog breeds based on ban criteria. Uses fetch and [The Dog API](https://www.thedogapi.com/) |
+| [My Crypto List](https://github.com/adikoul04/CodePath_WEB102/tree/main/crypto-hustle) | Lab 6 | A cryptocurrency dashboard where users can browse and search for current crypto prices |
 
 *Note: The README files of the labs are sparse but the project README files are more complete and descriptive*

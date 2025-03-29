@@ -1,0 +1,188 @@
+/* App.css */
+:root {
+  --primary-color: #2a71d0;
+  --secondary-color: #172b4d;
+  --accent-color: #50e3c2;
+  --background-dark: #0f172a;
+  --background-light: #1e293b;
+  --text-light: #f8fafc;
+  --text-muted: #94a3b8;
+  --border-radius: 8px;
+  --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+  --sidenav-width: 250px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  background: var(--background-dark);
+  color: var(--text-light);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Layout structure */
+.whole-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding-left: var(--sidenav-width);
+}
+
+/* Sidenav styles */
+.sidenav {
+  height: 100vh;
+  width: var(--sidenav-width);
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: var(--background-light);
+  padding: 2rem 1rem;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+  overflow-y: auto;
+}
+
+.sidenav h1 {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  color: var(--text-light);
+  text-align: left;
+  background: none;
+  -webkit-text-fill-color: var(--text-light);
+  text-fill-color: var(--text-light);
+}
+
+/* Main content styles */
+h1 {
+  text-align: center;
+  margin: 2rem 0;
+  font-size: 2.5rem;
+  background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+input[type="text"] {
+  width: 90%;
+  max-width: 600px;
+  padding: 1rem;
+  margin: 0 auto 2rem;
+  display: block;
+  border: none;
+  border-radius: var(--border-radius);
+  background-color: var(--background-light);
+  color: var(--text-light);
+  font-size: 1rem;
+  box-shadow: var(--box-shadow);
+  transition: all 0.3s ease;
+}
+
+input[type="text"]:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(80, 227, 194, 0.5);
+}
+
+input[type="text"]::placeholder {
+  color: var(--text-muted);
+}
+
+/* Coin listing styles */
+ul {
+  list-style: none;
+  padding: 0 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.main-list {
+  display: flex;
+  align-items: center;
+  background-color: var(--background-light);
+  border-radius: var(--border-radius);
+  padding: 1rem 1.5rem;
+  margin-bottom: 1rem;
+  box-shadow: var(--box-shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.main-list:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.icons {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  margin-right: 1rem;
+  background-color: white;
+  padding: 2px;
+  object-fit: contain;
+}
+
+.tab {
+  flex: 1;
+  min-width: 2rem;
+}
+
+/* Price styling */
+.main-list span:last-child {
+  font-weight: 700;
+  color: var(--accent-color);
+}
+
+/* Responsive design */
+@media (max-width: 992px) {
+  
+  .whole-page {
+    padding-left: 200px;
+  }
+}
+
+@media (max-width: 768px) {
+  
+  .whole-page {
+    padding-left: 0;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    margin: 1rem 0;
+  }
+  
+  ul {
+    padding: 0 1rem;
+  }
+  
+  .main-list {
+    padding: 0.75rem 1rem;
+  }
+}
+
+/* Loading and error states */
+.loading {
+  text-align: center;
+  padding: 2rem;
+  color: var(--text-muted);
+}
+
+.error {
+  text-align: center;
+  padding: 2rem;
+  color: #ef4444;
+}
+
+/* Empty state */
+.no-results {
+  text-align: center;
+  padding: 2rem;
+  color: var(--text-muted);
+}
