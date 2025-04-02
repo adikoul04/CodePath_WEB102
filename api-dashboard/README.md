@@ -47,7 +47,7 @@ GIF created with LICEcap
 
 ## Notes
 
-At first, I was having issues with the API not returning anything. I discovered it was due to a Cross-Origin Resource Sharing (CORS) restriction. To get past this, I used a development proxy server which sends requests to the actual API endpoint. Additionally, I encountered some strange API behavoir (unrecognized make led to returning all cars, model did not work without make) which I had to deal with by writing special cases. After I got the initial APi responses working, it was fairly smooth
+At first, I was having issues with the API not returning anything. I discovered it was due to a Cross-Origin Resource Sharing (CORS) restriction. To get past this, I used a development proxy server which sends requests to the actual API endpoint. Additionally, I encountered some strange API behavior (unrecognized make led to returning all cars, model did not work without make) which I had to deal with by writing special cases. After I got the initial API responses working, it was fairly smooth
 
 ## License
 
