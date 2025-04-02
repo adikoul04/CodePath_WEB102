@@ -1,4 +1,4 @@
-# Web Development Project 3 - *Smarter Than Fifth Grader Trivia*
+# Web Development Project 2 & 3 - *Smarter Than Fifth Grader Trivia*
 
 Submitted by: **Aditya Koul**
 
