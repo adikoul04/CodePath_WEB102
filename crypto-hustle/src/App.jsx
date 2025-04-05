@@ -7,24 +7,25 @@ function App() {
   const [list, setList] = useState(null)
   const [filteredResults, setFilteredResults] = useState([]);
   const [searchInput, setSearchInput] = useState("");
+  
   const searchItems = searchValue => {
     setSearchInput(searchValue);
-    if (searchValue !== "") {
+    if (searchValue !== "" && list) {
       const filteredData = Object.keys(list.Data).filter((coinKey) => 
         list.Data[coinKey].FullName.toLowerCase().includes(searchValue.toLowerCase()) ||
         list.Data[coinKey].Symbol.toLowerCase().includes(searchValue.toLowerCase())
       );
       setFilteredResults(filteredData);
     } else {
-      setFilteredResults(Object.keys(list.Data));
+      // When search is cleared, reset filtered results
+      setFilteredResults([]);
     }
   };
 
-  
   useEffect(() => {
     const fetchAllCoinData = async () => {
       const response = await fetch(
-        "https://min-api.cryptocompare.com/data/all/coinlist?&api_key" 
+        "https://min-api.cryptocompare.com/data/all/coinlist?&api_key=" 
         + API_KEY
       );
       const json = await response.json();
@@ -33,7 +34,6 @@ function App() {
 
     fetchAllCoinData().catch(console.error);
   }, []);
-
 
   return (
     <div className="whole-page">
@@ -45,26 +45,27 @@ function App() {
       />
       <ul>
       {searchInput.length > 0
-        ? filteredResults.map((coin) => 
-            list.Data[coin].PlatformType === "blockchain" ? 
+        ? filteredResults.map((coinKey) => 
+            list.Data[coinKey].PlatformType === "blockchain" ? 
             <CoinInfo
-              key={list.Data[coin].Symbol}
-              image={list.Data[coin].ImageUrl}
-              name={list.Data[coin].FullName}
-              symbol={list.Data[coin].Symbol}
+              key={list.Data[coinKey].Symbol}
+              image={list.Data[coinKey].ImageUrl}
+              name={list.Data[coinKey].FullName}
+              symbol={list.Data[coinKey].Symbol}
             />
             : null
           )
-        : list && Object.entries(list.Data).map(([coin]) => 
-            list.Data[coin].PlatformType === "blockchain" ? 
+        : list && Object.keys(list.Data || {}).map((coinKey) => 
+            list.Data[coinKey].PlatformType === "blockchain" ? 
             <CoinInfo
-              key={list.Data[coin].Symbol}
-              image={list.Data[coin].ImageUrl}
-              name={list.Data[coin].FullName}
-              symbol={list.Data[coin].Symbol}
+              key={list.Data[coinKey].Symbol}
+              image={list.Data[coinKey].ImageUrl}
+              name={list.Data[coinKey].FullName}
+              symbol={list.Data[coinKey].Symbol}
             />
-        : null
-      )}
+            : null
+          )
+      }
       </ul>
     </div>
   )

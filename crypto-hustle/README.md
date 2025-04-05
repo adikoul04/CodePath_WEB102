@@ -1,10 +1,10 @@
-# Web Development Lab 6 - *My Crypto List*
+# Web Development Lab 6 & 7- *My Crypto List*
 
 Submitted by: **Aditya Koul**
 
 This web app: **A cryptocurrency dashboard where users can browse and search for current crypto prices**
 
-Time spent: **2** hours spent in total
+Time spent: **3** hours spent in total
 
 ## Features
 
@@ -17,6 +17,8 @@ Time spent: **2** hours spent in total
 - [x] Filtering to display only blockchain-based cryptocurrencies
 - [x] Responsive design that works on both desktop and mobile devices
 - [x] Currency images displayed alongside pricing information
+- [x] Navigation between several pages is implemented with Router
+- [x] When user clicks on a coin, more details are displayed from the API
 
 ## License
 
