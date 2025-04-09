@@ -1,6 +1,5 @@
 /* App.css */
 
-/* Base Styles */
 :root {
   --primary-color: #2c3e50;
   --secondary-color: #3498db;
@@ -38,17 +37,17 @@ body {
   box-shadow: var(--box-shadow);
 }
 
-h1 {
+h1, h2 {
   color: var(--primary-color);
   text-align: center;
   margin-bottom: 30px;
   font-weight: 600;
-  font-size: 2.5rem;
+  font-size: 2rem;
   position: relative;
   padding-bottom: 10px;
 }
 
-h1::after {
+h1::after, h2::after {
   content: '';
   position: absolute;
   bottom: 0;
@@ -59,7 +58,6 @@ h1::after {
   background-color: var(--secondary-color);
 }
 
-/* Filters Section */
 .filters {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -68,11 +66,15 @@ h1::after {
   align-items: end;
 }
 
-.filters input {
+.filters input,
+.filters button {
   padding: 12px 15px;
-  border: 1px solid #ddd;
   border-radius: var(--border-radius);
   font-size: 16px;
+}
+
+.filters input {
+  border: 1px solid #ddd;
   transition: var(--transition);
 }
 
@@ -83,17 +85,14 @@ h1::after {
 }
 
 .filters button {
-  padding: 12px 20px;
   background-color: var(--secondary-color);
   color: white;
   border: none;
-  border-radius: var(--border-radius);
-  cursor: pointer;
-  font-size: 16px;
   font-weight: 600;
   transition: var(--transition);
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  cursor: pointer;
 }
 
 .filters button:hover {
@@ -102,7 +101,6 @@ h1::after {
   box-shadow: var(--box-shadow);
 }
 
-/* Stats Container */
 .stats-container {
   background-color: var(--light-color);
   padding: 20px;
@@ -128,7 +126,14 @@ h1::after {
   color: var(--secondary-color);
 }
 
-/* Car List */
+.charts {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
 .car-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -144,6 +149,7 @@ h1::after {
   transition: var(--transition);
   display: flex;
   flex-direction: column;
+  cursor: pointer;
 }
 
 .car-item:hover {
@@ -181,7 +187,21 @@ h1::after {
   font-size: 1.1rem;
 }
 
-/* Loading and Error States */
+.photo-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.photo-gallery img {
+  width: 100%;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  object-fit: cover;
+  height: 100px;
+}
+
 .loading, .error-message, .car-list > p {
   text-align: center;
   padding: 30px;
@@ -196,7 +216,6 @@ h1::after {
   margin: 20px 0;
 }
 
-/* Debug Panel */
 .debug-panel {
   margin: 30px 0;
   padding: 15px;
@@ -223,22 +242,25 @@ h1::after {
   max-height: 400px;
 }
 
-/* Responsive Adjustments */
 @media (max-width: 768px) {
   .filters {
     grid-template-columns: 1fr;
   }
-  
+
   .car-list {
     grid-template-columns: 1fr;
   }
-  
+
+  .charts {
+    flex-direction: column;
+    align-items: center;
+  }
+
   h1 {
     font-size: 2rem;
   }
 }
 
-/* Animation for loading */
 @keyframes spin {
   to { transform: rotate(360deg); }
 }
@@ -266,4 +288,136 @@ h1::after {
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
   margin: 0;
+}
+
+/* Stats Container */
+.stats-container {
+  background-color: var(--light-color);
+  padding: 20px;
+  border-radius: var(--border-radius);
+  margin-bottom: 25px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.stats-container p {
+  font-size: 18px;
+  color: var(--primary-color);
+  margin: 0;
+  padding: 8px 15px;
+  background-color: white;
+  border-radius: var(--border-radius);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Expanded Image Overlay */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.expanded-img {
+  width: 50vw;        
+  height: auto;        
+  max-height: 85vh;    
+  border-radius: var(--border-radius);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease;
+}
+
+/* Gallery */
+.photo-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.photo-gallery img {
+  width: 200px;
+  height: 130px;
+  object-fit: cover;
+  cursor: pointer;
+  border-radius: var(--border-radius);
+  transition: transform 0.2s ease;
+}
+
+.photo-gallery img:hover {
+  transform: scale(1.05);
+}
+
+/* Back Button */
+.car-detail-actions {
+  margin-bottom: 20px;
+}
+
+.back-btn {
+  padding: 10px 15px;
+  background-color: var(--secondary-color);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-size: 16px;
+  transition: var(--transition);
+}
+
+.back-btn:hover {
+  background-color: #2980b9;
+}
+
+.no-cars-message-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  width: 100%;
+  grid-column: 1 / -1;
+}
+
+.no-cars-message {
+  font-size: 20px;
+  color: var(--gray-color);
+  background-color: white;
+  border-radius: var(--border-radius);
+  padding: 20px 40px;
+  box-shadow: var(--box-shadow);
+  text-align: center;
+}
+
+.nav-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 3rem;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 10px 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 1000;
+  user-select: none;
+  transition: background-color 0.3s ease;
+}
+
+.nav-arrow:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.nav-arrow.left {
+  left: 30px;
+}
+
+.nav-arrow.right {
+  right: 30px;
 }
