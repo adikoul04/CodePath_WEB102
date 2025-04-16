@@ -14,6 +14,7 @@ So far, the following projects have been added:
 | [Dog Veni Vici](https://github.com/adikoul04/CodePath_WEB102/tree/main/veni-vici) | Project 5 | A discovery app that shows the users new dog breeds based on ban criteria. Uses fetch and [The Dog API](https://www.thedogapi.com/) |
 | [My Crypto List](https://github.com/adikoul04/CodePath_WEB102/tree/main/crypto-hustle) | Lab 6 & 7| A cryptocurrency dashboard where users can browse and search for current crypto prices. Navigation is implemented and pages with details about each coin were added |
 | [Car Listing Dashboard](https://github.com/adikoul04/CodePath_WEB102/tree/main/api-dashboard) | Project 6 & 7| An app that helps users search for cars through [Auto.dev API](https://www.auto.dev/) |
+| [Bet](https://github.com/adikoul04/CodePath_WEB102/tree/main/bet) | Lab 8| A social betting platform where users can create, view, and bet on challenges. Uses Supabase for database storage and React Router for navigation |
 
 *Notes: 
 <br/>The README files of the labs are sparse but the project README files are more complete and descriptive
