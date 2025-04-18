@@ -1,0 +1,161 @@
+/* Reset + base ----------------------------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap');
+*, *::before, *::after { box-sizing: border-box; }
+
+
+body {
+  margin: 0;
+  font-family: 'Cinzel', serif;
+  background: #2c1810;
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%233c2417' fill-opacity='0.4' fill-rule='evenodd'/%3E%3C/svg%3E");
+  color: #f4d03f;
+  line-height: 1.5;
+}
+
+/* Layout helpers -------------------------------------------------------- */
+.container { max-width: 960px; margin: 0 auto; padding: 1.5rem; }
+.mt-1 { margin-top: .25rem; } .mt-2 { margin-top: .5rem; }
+.mb-4 { margin-bottom: 1rem; }
+.space-y-3 > * + * { margin-top: .75rem; }
+.space-y-4 > * + * { margin-top: 1rem; }
+
+/* Navigation ------------------------------------------------------------ */
+.nav {
+  background: #8b4513;
+  background-image: linear-gradient(to bottom, #a0522d, #8b4513);
+  color: #ffd700;
+  padding: 1rem 1.5rem;
+  display: flex;
+  gap: 1rem;
+  border-bottom: 3px solid #654321;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+.nav a {
+  color: inherit;
+  font-weight: 700;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+.nav a:hover { 
+  background: rgba(255, 215, 0, 0.2);
+  text-decoration: none;
+}
+
+/* Buttons --------------------------------------------------------------- */
+.button { 
+  border: 2px solid #654321; 
+  padding: .5rem 1rem; 
+  border-radius: .375rem; 
+  cursor: pointer;
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+.button-primary { 
+  background: linear-gradient(to bottom, #a0522d, #8b4513);
+  color: #ffd700;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+.button-primary:hover { 
+  background: linear-gradient(to bottom, #8b4513, #654321);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+.button-danger { 
+  background: linear-gradient(to bottom, #8b0000, #800000);
+  color: #ffd700;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+.button-danger:hover { 
+  background: linear-gradient(to bottom, #800000, #4b0082);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+.button-secondary { 
+  background: linear-gradient(to bottom, #696969, #4a4a4a);
+  color: #ffd700;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Card ------------------------------------------------------------------ */
+.card {
+  background: linear-gradient(to bottom, #3c2417, #2c1810);
+  padding: 1.5rem;
+  border-radius: .5rem;
+  border: 2px solid #654321;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  display: flex; 
+  align-items: center; 
+  gap: 1rem;
+  transition: transform 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+.card img { 
+  width: 80px; 
+  height: 80px; 
+  object-fit: contain;
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
+}
+
+/* Form ------------------------------------------------------------------ */
+.form-label { 
+  font-weight: 700; 
+  display: block; 
+  margin-bottom: .25rem;
+  color: #ffd700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.form-control {
+  width: 100%;
+  padding: .75rem;
+  border: 2px solid #654321;
+  border-radius: .375rem;
+  background: rgba(44, 24, 16, 0.8);
+  color: #ffd700;
+  font-family: 'Cinzel', serif;
+}
+.form-control:focus {
+  outline: none;
+  border-color: #ffd700;
+  box-shadow: 0 0 0 2px rgba(255, 215, 0, 0.2);
+}
+.grid-2 { display: grid; grid-template-columns: repeat(2,1fr); gap: 1rem; }
+
+/* Spinner --------------------------------------------------------------- */
+.spinner {
+  width: 2rem; 
+  height: 2rem;
+  border: 4px solid #654321;
+  border-top-color: #ffd700;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* Additional Medieval Theme Styles */
+h1 {
+  color: #ffd700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+select.form-control {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23ffd700' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 1em;
+  padding-right: 2.5rem;
+}
